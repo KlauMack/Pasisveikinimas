@@ -3,44 +3,85 @@
 
 const int N = 30;
 
-int main()
+
+void PirmaIrPaskutineEilutes(int a)
 {
-	int EilutesIlgis;
-	std::string PrEilute, AnEilute, KtEilute, PnEilute, Vardas;
-	char p[N] = { ' ' };
-
-	std::cout << "Iveskite varda: ";  std::cin >> Vardas;
-	EilutesIlgis = 14 + Vardas.size();
-
-	for (int i = 0; i < EilutesIlgis; i++)
+	std::cout << "*";
+	for (int i = 0; i < a; i++)
 	{
-		p[i] = '*';
+		std::cout << '*';
 	}
-	PrEilute = p;
-	PnEilute = p;
+	std::cout << "*" << std::endl;
+}
 
-	for (int x = 1; x < EilutesIlgis - 1; x++)
+void TarpuEilutes(int a)
+{
+	std::cout << "*";
+	for (int i = 0; i < a; i++)
 	{
-		p[x] = ' ';
+		std::cout << ' ';
+	}
+	std::cout << "*" << std::endl;
+}
+
+void VidurineEilute(int a, std::string b)
+{
+	std::cout << "*";
+
+	for (int i = 0; i < a; i++)
+	{
+		std::cout << ' ';
 	}
 
-	AnEilute = p;
-	KtEilute = p;
-
-	std::cout << PrEilute << std::endl;
-	std::cout << AnEilute << std::endl;
-
-	if (Vardas.back() == 's')
+	if (b.back() == 's')
 	{
-		std::cout << "* Sveikas, " << Vardas << "! *" << std::endl;
+		std::cout << "Sveikas, " + b + "!";
 	}
 	else
 	{
-		std::cout << "* Sveika, " << Vardas << "! *" << std::endl;
+		std::cout << "Sveika, " + b + "!";
+	}
+	
+
+	for (int i = 0; i < a; i++)
+	{
+		std::cout << ' ';
 	}
 
-	std::cout << KtEilute << std::endl;
-	std::cout << PnEilute << std::endl;
+	std::cout << "*" << std::endl;
+}
+
+int main()
+{
+	int EilutesIlgis, RemelioIlgis;
+	std::string Vardas;
+
+	std::cout << "Iveskite varda: ";  std::cin >> Vardas;
+	std::cout << "Iveskite remelio ilgis: "; std::cin >> RemelioIlgis;
+
+	if (Vardas.back() == 's')
+	{
+		EilutesIlgis = 10 + RemelioIlgis * 2 + Vardas.size();
+
+	}
+	else
+	{
+		EilutesIlgis = 9 + RemelioIlgis * 2 + Vardas.size();
+	}
+	
+	std::cout << EilutesIlgis << std::endl;
+
+	PirmaIrPaskutineEilutes (EilutesIlgis);
+	for (int i = 0; i < RemelioIlgis; i++)
+	{
+		TarpuEilutes (EilutesIlgis);
+	}
+	VidurineEilute (RemelioIlgis, Vardas);
+	for (int i = 0; i < RemelioIlgis; i++)
+	{
+		TarpuEilutes (EilutesIlgis);
+	}
+	PirmaIrPaskutineEilutes (EilutesIlgis);
 
 	return 0;
 }
