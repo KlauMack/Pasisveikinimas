@@ -1,4 +1,3 @@
-#include "pch.h"
 #include <iostream>
 #include <string>
 
@@ -7,7 +6,7 @@ const int N = 30;
 int main()
 {
 	int EilutesIlgis;
-	std::string PrEilute, AnEilute, TrEilute, KtEilute, PnEilute, Vardas;
+	std::string PrEilute, AnEilute, KtEilute, PnEilute, Vardas;
 	char p[N] = { ' ' };
 
 	std::cout << "Iveskite varda: ";  std::cin >> Vardas;
@@ -28,11 +27,18 @@ int main()
 	AnEilute = p;
 	KtEilute = p;
 
-	TrEilute = "* Sveikas, " + Vardas + "! *";
-
 	std::cout << PrEilute << std::endl;
 	std::cout << AnEilute << std::endl;
-	std::cout << TrEilute << std::endl;
+
+	if (Vardas.back() == 's')
+	{
+		std::cout << "* Sveikas, " << Vardas << "! *" << std::endl;
+	}
+	else
+	{
+		std::cout << "* Sveika, " << Vardas << "! *" << std::endl;
+	}
+
 	std::cout << KtEilute << std::endl;
 	std::cout << PnEilute << std::endl;
 
