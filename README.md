@@ -1,6 +1,6 @@
 ## Programos tikslas
 
-**Programa atspausdina įrėmintą pasisveikiną sudarytą iš 5 eilučių:**
+**Programa atspausdina įrėmintą pasisveikiną sudarytą iš 5 eilučių.**
 
 ## Programos išvedimas 
 
